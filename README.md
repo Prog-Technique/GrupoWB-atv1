@@ -73,8 +73,13 @@ git clone https://github.com/Prog-Technique/atv1.git
 cd atv1
 ~~~
 
+- compile 
+~~~
+npx tsc
+~~~
+
 - agora é só rodar
 ~~~   
-node .\js\app.js
+node out/app/main.js
 ~~~
 
