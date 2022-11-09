@@ -7,6 +7,11 @@ import ApagaCliente from "../negocio/Cliente/apagaCliente";
 import AtualizaCliente from "../negocio/Cliente/atualizaCliente";
 import DadosDeCliente from "../negocio/Cliente/dados";
 
+import CadastroProduto from "../negocio/Produto/cadastroProduto";
+import ListagemProdutos from "../negocio/Produto/listagemProdutos";
+import ApagaProduto from "../negocio/Produto/apagaProduto";
+import AtualizaProduto from "../negocio/Produto/atualizaProduto";
+
 
 console.log(`Bem-vindo ao cadastro de clientes do Grupo World Beauty`)
 let empresa = new Empresa()
@@ -21,10 +26,17 @@ while (execucao) {
     console.log(`3 - Atualizar cliente`);
     console.log(`4 - Apagar cliente`);
     console.log(`----------------------------`);
+    console.log(`5 - Cadastrar produto`);
+    console.log(`6 - Listar todos os produtos`);
+    console.log(`7 - Atualizar produto`);
+    console.log(`8 - Apagar produto`);
+    console.log(`----------------------------`);
     console.log(`0 - Sair`);
+    console.log();
 
     let entrada = new Entrada()
     let opcao = entrada.receberNumero(`Por favor, escolha uma opção: `)
+    console.log();
 
     switch (opcao) {
         case 1:
@@ -36,12 +48,28 @@ while (execucao) {
             listagem.listar()
             break;
         case 3:
-            let atualizaCli = new AtualizaCliente(empresa.getClientes)
-            atualizaCli.atualizar()
+            let atualizaCliente = new AtualizaCliente(empresa.getClientes)
+            atualizaCliente.atualizar()
             break;
         case 4:
-            let apagaCli = new ApagaCliente(empresa.getClientes)
-            apagaCli.apagar()
+            let apagaCliente = new ApagaCliente(empresa.getClientes)
+            apagaCliente.apagar()
+            break;
+        case 5:
+            let cadastroProduto = new CadastroProduto(empresa.getProdutos)
+            cadastroProduto.cadastrar()
+            break;
+        case 6:
+            let listagemProdutos = new ListagemProdutos(empresa.getProdutos)
+            listagemProdutos.listar()
+            break;
+        case 7:
+            let atualizaProduto = new AtualizaProduto(empresa.getProdutos)
+            atualizaProduto.atualizar()
+            break;
+        case 8:
+            let apagaProduto = new ApagaProduto(empresa.getProdutos)
+            apagaProduto.apagar()
             break;
         case 0:
             execucao = false

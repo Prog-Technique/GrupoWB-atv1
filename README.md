@@ -40,8 +40,8 @@
 | CÓDIGO | DESCRIÇÃO |
 |:------:|:----------|
 |   RF1  | CRUD (Create, Read, Update e Delete) de clientes 
-|   RF2  | CRUD de produtos ou serviços
-|   RF3  | Registro de consumo dos produtos ou serviços que cada cliente adquiriu 
+|   RF2  | CRUD de produtos e/ou serviços
+|   RF3  | Registro de consumo dos produtos e/ou serviços que cada cliente adquiriu 
 |   RF4  | Listagens 
 
  #### Especificação das Listagens
@@ -62,7 +62,7 @@
 
 ## :scroll: Manual do Usuário
 
-- crie uma pasta, entre e abra o cmd
+- crie uma pasta, entre nela e abra o cmd
 - clone o repositório
 ~~~
 git clone https://github.com/Prog-Technique/atv1.git  

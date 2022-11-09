@@ -1,39 +1,39 @@
 import Entrada from "../../io/entrada";
-import Cliente from "../../modelo/cliente";
+import Produto from "../../modelo/produto";
 import Apaga from "../apaga";
 
-export default class ApagaCliente extends Apaga {
+export default class ApagaProduto extends Apaga {
 
-    private clientes: Array<Cliente>
+    private produtos: Array<Produto>
     private entrada: Entrada
-    constructor(clientes: Array<Cliente>) {
+    constructor(produtos: Array<Produto>) {
         super()
-        this.clientes = clientes;
+        this.produtos = produtos;
         this.entrada = new Entrada();
     }
     public apagar(): void {
-        let todosClientes = this.clientes.map(i => i.nome)
-        let entrada = this.entrada.receberTexto(`Digite o nome completo do cliente a ser apagado: `)
-        let pegarIndexOF = todosClientes.indexOf(entrada)
+        let todosProdutos = this.produtos.map(i => i.nome)
+        let entrada = this.entrada.receberTexto(`Digite o nome completo do produto a ser apagado: `)
+        let pegarIndexOF = todosProdutos.indexOf(entrada)
         if (pegarIndexOF == -1) {
-            console.log(`Cliente ${entrada} não encontrado`);
+            console.log(`Produto ${entrada} não encontrado`);
             console.log(`Tente novamente`);
             console.log();
         } else {
             let execucao = true
             while (execucao) {
                 console.log();
-                console.log(`Deseja deletar o cliente? 1 - Sim | 2 - Não `);
+                console.log(`Deseja deletar o produto? 1 - Sim | 2 - Não `);
                 let valor = this.entrada.receberNumero(`Resposta: `)
                 switch (valor) {
                     case 1:
-                        this.clientes.map(i => {
+                        this.produtos.map(i => {
                             if (entrada === i.nome) {
-                                let index = this.clientes.indexOf(i)
-                                this.clientes.splice(index, 1)
+                                let index = this.produtos.indexOf(i)
+                                this.produtos.splice(index, 1)
                             }
                         })
-                        console.log(`Cliente deletado com sucesso!`);
+                        console.log(`Produto deletado com sucesso!`);
                         console.log();
                         execucao = false
                         break;
