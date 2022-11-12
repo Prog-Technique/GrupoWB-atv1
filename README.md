@@ -17,6 +17,11 @@
 
 ## :mag_right: Sobre o projeto
  O Grupo World Beauty (WB) solicitou um programa de cadastro de clientes para trazer informações que permite um contato mais próximo com seus clientes e para melhorar suas vendas. A agenda, inicialmente, será um sistema do tipo cli (command-line interface), ou seja, deverá funcionar sem uma interface gráfica, apenas pela linha de comando.
+ 
+<br>
+
+> 🔗 **Link** <br>
+> - Documento: [Clique para baixar atvi-wb.pdf](https://github.com/Prog-Technique/atv1/files/9995766/atvi-wb.pdf)
     
 <br>
 
@@ -58,14 +63,10 @@
 
 <br>
 
-> 🔗 **Link** <br>
-> - Documento: [Clique aqui para abrir]()
+## :white_medium_square: Diagrama
+![diagrama](https://user-images.githubusercontent.com/100284976/201491396-551bb116-7868-4191-b58e-337de4f78c82.png)
 
-<div align="center ">
-### Diagrama
-<img src="" width="700"/>
-</div>
-
+<br>
 
 <span id="manual">
 
