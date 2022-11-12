@@ -19,11 +19,12 @@ export default class DadosDeCliente extends Dados {
     public dados(): void {
         let nome = "Amanda Vieira"
         let nomeSocial = "Dika"
+        let genero = "Feminino"
         let valor = "111.111.111-11";
         let date = new Date()
         date.getDate()
         let cpf = new CPF(valor, date);
-        let cliente = new Cliente(nome, nomeSocial, cpf)
+        let cliente = new Cliente(nome, nomeSocial, genero, cpf)
         valor = "11.111.111-1"
         let rg = new RG(valor, date)
         let ddd = "12"
@@ -64,11 +65,12 @@ export default class DadosDeCliente extends Dados {
         
         nome = "Barbara Maria"
         nomeSocial = "Babi"
+        genero = "Feminino"
         valor = "222.222.222-22";
         date = new Date()
         date.getDate()
         cpf = new CPF(valor, date);
-        cliente = new Cliente(nome, nomeSocial, cpf)
+        cliente = new Cliente(nome, nomeSocial, genero, cpf)
         valor = "22.222.222-2"
         rg = new RG(valor, date)
         ddd = "12"
@@ -108,11 +110,12 @@ export default class DadosDeCliente extends Dados {
 
         nome = "Caio Galvao"
         nomeSocial = "Cainhao"
+        genero = "Masculino"
         valor = "333.333.333-33";
         date = new Date()
         date.getDate()
         cpf = new CPF(valor, date);
-        cliente = new Cliente(nome, nomeSocial, cpf)
+        cliente = new Cliente(nome, nomeSocial, genero, cpf)
         valor = "33.333.333-3"
         rg = new RG(valor, date)
         ddd = "12"
@@ -153,11 +156,12 @@ export default class DadosDeCliente extends Dados {
 
         nome = "Daniel Silva"
         nomeSocial = "Dani"
+        genero = "Masculino"
         valor = "444.444.444-44";
         date = new Date()
         date.getDate()
         cpf = new CPF(valor, date);
-        cliente = new Cliente(nome, nomeSocial, cpf)
+        cliente = new Cliente(nome, nomeSocial, genero, cpf)
         valor = "44.444.444-4"
         rg = new RG(valor, date)
         ddd = "12"
@@ -197,11 +201,12 @@ export default class DadosDeCliente extends Dados {
 
         nome = "Elerson Magalhaes"
         nomeSocial = "Eler"
+        genero = "Masculino"
         valor = "555.555.555-55";
         date = new Date()
         date.getDate()
         cpf = new CPF(valor, date);
-        cliente = new Cliente(nome, nomeSocial, cpf)
+        cliente = new Cliente(nome, nomeSocial, genero, cpf)
         valor = "55.555.555-5"
         rg = new RG(valor, date)
         ddd = "12"
@@ -241,11 +246,12 @@ export default class DadosDeCliente extends Dados {
         
         nome = "Fernanda Ruiva"
         nomeSocial = "Fer"
+        genero = "Feminino"
         valor = "666.666.666-66";
         date = new Date()
         date.getDate()
         cpf = new CPF(valor, date);
-        cliente = new Cliente(nome, nomeSocial, cpf)
+        cliente = new Cliente(nome, nomeSocial, genero, cpf)
         valor = "66.666.666-6"
         rg = new RG(valor, date)
         ddd = "12"
@@ -287,11 +293,12 @@ export default class DadosDeCliente extends Dados {
 
         nome = "Gerson Penha"
         nomeSocial = "Ger"
+        genero = "Masculino"
         valor = "777.777.777-77";
         date = new Date()
         date.getDate()
         cpf = new CPF(valor, date);
-        cliente = new Cliente(nome, nomeSocial, cpf)
+        cliente = new Cliente(nome, nomeSocial, genero, cpf)
         valor = "77.777.777-7"
         rg = new RG(valor, date)
         ddd = "12"
@@ -331,11 +338,12 @@ export default class DadosDeCliente extends Dados {
 
         nome = "Helena Aldovia"
         nomeSocial = "Helen"
+        genero = "Feminino"
         valor = "888.888.888-88";
         date = new Date()
         date.getDate()
         cpf = new CPF(valor, date);
-        cliente = new Cliente(nome, nomeSocial, cpf)
+        cliente = new Cliente(nome, nomeSocial, genero, cpf)
         valor = "88.888.888-8"
         rg = new RG(valor, date)
         ddd = "12"
@@ -375,11 +383,12 @@ export default class DadosDeCliente extends Dados {
 
         nome = "Ismael Xema"
         nomeSocial = "Mael"
+        genero = "Masculino"
         valor = "999.999.999-99";
         date = new Date()
         date.getDate()
         cpf = new CPF(valor, date);
-        cliente = new Cliente(nome, nomeSocial, cpf)
+        cliente = new Cliente(nome, nomeSocial, genero, cpf)
         valor = "99.999.999-9"
         rg = new RG(valor, date)
         ddd = "12"
@@ -388,50 +397,6 @@ export default class DadosDeCliente extends Dados {
         produtos = [
             "Hidratante",
             "Tesoura"
-        ]
-        sliceProdutos = produtos.slice();
-        for (let index = 0; index < sliceProdutos.length; index++) {
-            let nomes = this.produtos.map(i => (i.nome))
-            let pegarPreco = this.produtos.filter(produto => produto.nome == sliceProdutos[index]).map(i => { return i.preco }).toString()
-            if (nomes.includes(sliceProdutos[index])) {
-                let produtoNovo = new Produto(sliceProdutos[index], Number(pegarPreco))
-                cliente.getProdutosConsumidos.push(produtoNovo)
-            }
-        }
-        servico = [
-            "Corte de cabelo",
-            "Hidratacao"]
-        sliceServico = servico.slice();
-        for (let index = 0; index < sliceServico.length; index++) {
-            let nomes = this.servicos.map(i => (i.nome))
-            let pegarPreco = this.servicos.filter(produto => produto.nome == sliceServico[index]).map(i => { return i.preco }).toString()
-            if (nomes.includes(sliceServico[index])) {
-                let adicionandoServico = new Servico(sliceServico[index], Number(pegarPreco))
-                cliente.getServicosConsumidos.push(adicionandoServico)
-            }
-
-        };
-        cliente.getRgs.push(rg);
-        cliente.getTelefones.push(telefone);
-        this.clientes.push(cliente)
-        
-        //--------------------------------------------------------------------------------------------------------------------------------------
-
-        nome = "Joao Martins"
-        nomeSocial = "Jao"
-        valor = "100.100.100-10";
-        date = new Date()
-        date.getDate()
-        cpf = new CPF(valor, date);
-        cliente = new Cliente(nome, nomeSocial, cpf)
-        valor = "10.100.100-1"
-        rg = new RG(valor, date)
-        ddd = "12"
-        numero = "991010101"
-        telefone = new Telefone(ddd, numero)
-        produtos = [
-            "Shampoo Clear",
-            "Laminas"
         ]
         sliceProdutos = produtos.slice();
         for (let index = 0; index < sliceProdutos.length; index++) {
@@ -460,14 +425,60 @@ export default class DadosDeCliente extends Dados {
         this.clientes.push(cliente)
         
         //--------------------------------------------------------------------------------------------------------------------------------------
+
+        nome = "Joao Martins"
+        nomeSocial = "Jao"
+        genero = "Masculino"
+        valor = "100.100.100-10";
+        date = new Date()
+        date.getDate()
+        cpf = new CPF(valor, date);
+        cliente = new Cliente(nome, nomeSocial, genero, cpf)
+        valor = "10.100.100-1"
+        rg = new RG(valor, date)
+        ddd = "12"
+        numero = "991010101"
+        telefone = new Telefone(ddd, numero)
+        produtos = [
+            "Shampoo Clear",
+            "Laminas"
+        ]
+        sliceProdutos = produtos.slice();
+        for (let index = 0; index < sliceProdutos.length; index++) {
+            let nomes = this.produtos.map(i => (i.nome))
+            let pegarPreco = this.produtos.filter(produto => produto.nome == sliceProdutos[index]).map(i => { return i.preco }).toString()
+            if (nomes.includes(sliceProdutos[index])) {
+                let produtoNovo = new Produto(sliceProdutos[index], Number(pegarPreco))
+                cliente.getProdutosConsumidos.push(produtoNovo)
+            }
+        }
+        servico = [
+            "Corte de cabelo",
+            "Hidratacao",]
+        sliceServico = servico.slice();
+        for (let index = 0; index < sliceServico.length; index++) {
+            let nomes = this.servicos.map(i => (i.nome))
+            let pegarPreco = this.servicos.filter(produto => produto.nome == sliceServico[index]).map(i => { return i.preco }).toString()
+            if (nomes.includes(sliceServico[index])) {
+                let adicionandoServico = new Servico(sliceServico[index], Number(pegarPreco))
+                cliente.getServicosConsumidos.push(adicionandoServico)
+            }
+
+        };
+        cliente.getRgs.push(rg);
+        cliente.getTelefones.push(telefone);
+        this.clientes.push(cliente)
+        
+        //--------------------------------------------------------------------------------------------------------------------------------------
         
         nome = "Kaique Gomes"
         nomeSocial = "Kay"
+        genero = "Masculino"
         valor = "110.110.110-11";
         date = new Date()
         date.getDate()
         cpf = new CPF(valor, date);
-        cliente = new Cliente(nome, nomeSocial, cpf)
+        cliente = new Cliente(nome, nomeSocial, genero, cpf)
         valor = "11.110.110-1"
         rg = new RG(valor, date)
         ddd = "12"
@@ -508,11 +519,12 @@ export default class DadosDeCliente extends Dados {
 
         nome = "Larissa Vieira"
         nomeSocial = "Lara"
+        genero = "Feminino"
         valor = "120.120.120-12";
         date = new Date()
         date.getDate()
         cpf = new CPF(valor, date);
-        cliente = new Cliente(nome, nomeSocial, cpf)
+        cliente = new Cliente(nome, nomeSocial, genero, cpf)
         valor = "12.120.120-1"
         rg = new RG(valor, date)
         ddd = "12"
@@ -553,11 +565,12 @@ export default class DadosDeCliente extends Dados {
 
         nome = "Mariana Gonsalves"
         nomeSocial = "Mari"
+        genero = "Feminino"
         valor = "130.130.130-13";
         date = new Date()
         date.getDate()
         cpf = new CPF(valor, date);
-        cliente = new Cliente(nome, nomeSocial, cpf)
+        cliente = new Cliente(nome, nomeSocial, genero, cpf)
         valor = "13.130.130-1"
         rg = new RG(valor, date)
         ddd = "12"
@@ -598,11 +611,12 @@ export default class DadosDeCliente extends Dados {
 
         nome = "Nicolas Escobar"
         nomeSocial = "Nic"
+        genero = "Masculino"
         valor = "140.140.140-14";
         date = new Date()
         date.getDate()
         cpf = new CPF(valor, date);
-        cliente = new Cliente(nome, nomeSocial, cpf)
+        cliente = new Cliente(nome, nomeSocial, genero, cpf)
         valor = "14.140.140-1"
         rg = new RG(valor, date)
         ddd = "12"
@@ -643,11 +657,12 @@ export default class DadosDeCliente extends Dados {
 
         nome = "Olivia Martines"
         nomeSocial = "Oli"
+        genero = "Feminino"
         valor = "150.150.150-15";
         date = new Date()
         date.getDate()
         cpf = new CPF(valor, date);
-        cliente = new Cliente(nome, nomeSocial, cpf)
+        cliente = new Cliente(nome, nomeSocial, genero, cpf)
         valor = "15.150.150-1"
         rg = new RG(valor, date)
         ddd = "12"
@@ -688,11 +703,12 @@ export default class DadosDeCliente extends Dados {
 
         nome = "Paulo Cuenca"
         nomeSocial = "Pablo"
+        genero = "Masculino"
         valor = "160.160.160-16";
         date = new Date()
         date.getDate()
         cpf = new CPF(valor, date);
-        cliente = new Cliente(nome, nomeSocial, cpf)
+        cliente = new Cliente(nome, nomeSocial, genero, cpf)
         valor = "16.160.160-1"
         rg = new RG(valor, date)
         ddd = "12"
@@ -733,11 +749,12 @@ export default class DadosDeCliente extends Dados {
 
         nome = "Renato Caires"
         nomeSocial = "Rei"
+        genero = "Masculino"
         valor = "170.170.170-17";
         date = new Date()
         date.getDate()
         cpf = new CPF(valor, date);
-        cliente = new Cliente(nome, nomeSocial, cpf)
+        cliente = new Cliente(nome, nomeSocial, genero, cpf)
         valor = "17.170.170-1"
         rg = new RG(valor, date)
         ddd = "12"
@@ -780,11 +797,12 @@ export default class DadosDeCliente extends Dados {
 
         nome = "Saara Ferraz"
         nomeSocial = "Sara"
+        genero = "Feminino"
         valor = "180.180.180-18";
         date = new Date()
         date.getDate()
         cpf = new CPF(valor, date);
-        cliente = new Cliente(nome, nomeSocial, cpf)
+        cliente = new Cliente(nome, nomeSocial, genero, cpf)
         valor = "18.180.180-1"
         rg = new RG(valor, date)
         ddd = "12"
@@ -805,7 +823,7 @@ export default class DadosDeCliente extends Dados {
         }
         servico = [
             "Corte de cabelo",
-            "Lavagem"
+            "Lavagem  de cabelo"
         ]
         sliceServico = servico.slice();
         for (let index = 0; index < sliceServico.length; index++) {
@@ -825,11 +843,12 @@ export default class DadosDeCliente extends Dados {
 
         nome = "Tomas Oliveira"
         nomeSocial = "Tho"
+        genero = "Masculino"
         valor = "190.190.190-19";
         date = new Date()
         date.getDate()
         cpf = new CPF(valor, date);
-        cliente = new Cliente(nome, nomeSocial, cpf)
+        cliente = new Cliente(nome, nomeSocial, genero, cpf)
         valor = "19.190.190-1"
         rg = new RG(valor, date)
         ddd = "12"
@@ -850,7 +869,7 @@ export default class DadosDeCliente extends Dados {
         }
         servico = [
             "Corte de cabelo",
-            "Unhas"
+            "Barba"
         ]
         sliceServico = servico.slice();
         for (let index = 0; index < sliceServico.length; index++) {
@@ -870,11 +889,12 @@ export default class DadosDeCliente extends Dados {
 
         nome = "Valentina Valente"
         nomeSocial = "Va"
+        genero = "Feminino"
         valor = "200.200.200-20";
         date = new Date()
         date.getDate()
         cpf = new CPF(valor, date);
-        cliente = new Cliente(nome, nomeSocial, cpf)
+        cliente = new Cliente(nome, nomeSocial, genero, cpf)
         valor = "20.200.200-1"
         rg = new RG(valor, date)
         ddd = "12"
@@ -915,11 +935,12 @@ export default class DadosDeCliente extends Dados {
 
         nome = "Julia Gaya"
         nomeSocial = "Xulia"
+        genero = "Feminino"
         valor = "210.210.210-21";
         date = new Date()
         date.getDate()
         cpf = new CPF(valor, date);
-        cliente = new Cliente(nome, nomeSocial, cpf)
+        cliente = new Cliente(nome, nomeSocial, genero, cpf)
         valor = "21.210.210-2"
         rg = new RG(valor, date)
         ddd = "12"
@@ -958,11 +979,12 @@ export default class DadosDeCliente extends Dados {
         
         nome = "Camila Keiros"
         nomeSocial = "Cay"
+        genero = "Feminino"
         valor = "220.220.220-2";
         date = new Date()
         date.getDate()
         cpf = new CPF(valor, date);
-        cliente = new Cliente(nome, nomeSocial, cpf)
+        cliente = new Cliente(nome, nomeSocial, genero, cpf)
         valor = "22.220.220-2"
         rg = new RG(valor, date)
         ddd = "12"
@@ -1002,11 +1024,12 @@ export default class DadosDeCliente extends Dados {
 
         nome = "Larissa Vieira"
         nomeSocial = "Lara"
+        genero = "Feminino"
         valor = "230.230.230-23";
         date = new Date()
         date.getDate()
         cpf = new CPF(valor, date);
-        cliente = new Cliente(nome, nomeSocial, cpf)
+        cliente = new Cliente(nome, nomeSocial, genero, cpf)
         valor = "23.230.230-2"
         rg = new RG(valor, date)
         ddd = "12"
@@ -1046,11 +1069,12 @@ export default class DadosDeCliente extends Dados {
 
         nome = "Marino Zague"
         nomeSocial = "Mario"
+        genero = "Masculino"
         valor = "240.240.240-24";
         date = new Date()
         date.getDate()
         cpf = new CPF(valor, date);
-        cliente = new Cliente(nome, nomeSocial, cpf)
+        cliente = new Cliente(nome, nomeSocial, genero, cpf)
         valor = "24.240.240-2"
         rg = new RG(valor, date)
         ddd = "12"
@@ -1090,11 +1114,12 @@ export default class DadosDeCliente extends Dados {
 
         nome = "Nicole Coelho"
         nomeSocial = "Nicol"
+        genero = "Feminino"
         valor = "250.250.250-25";
         date = new Date()
         date.getDate()
         cpf = new CPF(valor, date);
-        cliente = new Cliente(nome, nomeSocial, cpf)
+        cliente = new Cliente(nome, nomeSocial, genero, cpf)
         valor = "25.250.250-2"
         rg = new RG(valor, date)
         ddd = "12"
@@ -1135,11 +1160,12 @@ export default class DadosDeCliente extends Dados {
 
         nome = "Oliver Green"
         nomeSocial = "Oli"
+        genero = "Masculino"
         valor = "260.260.260-26";
         date = new Date()
         date.getDate()
         cpf = new CPF(valor, date);
-        cliente = new Cliente(nome, nomeSocial, cpf)
+        cliente = new Cliente(nome, nomeSocial, genero, cpf)
         valor = "26.260.260-2"
         rg = new RG(valor, date)
         ddd = "12"
@@ -1180,11 +1206,12 @@ export default class DadosDeCliente extends Dados {
 
         nome = "Paula Mercer"
         nomeSocial = "Paulinha"
+        genero = "Feminino"
         valor = "270.270.270-27";
         date = new Date()
         date.getDate()
         cpf = new CPF(valor, date);
-        cliente = new Cliente(nome, nomeSocial, cpf)
+        cliente = new Cliente(nome, nomeSocial, genero, cpf)
         valor = "27.270.270-2"
         rg = new RG(valor, date)
         ddd = "12"
@@ -1224,11 +1251,12 @@ export default class DadosDeCliente extends Dados {
 
         nome = "Renata Alburquerque"
         nomeSocial = "Renatinha"
+        genero = "Feminino"
         valor = "280.280.280-28";
         date = new Date()
         date.getDate()
         cpf = new CPF(valor, date);
-        cliente = new Cliente(nome, nomeSocial, cpf)
+        cliente = new Cliente(nome, nomeSocial, genero, cpf)
         valor = "28.280.280-2"
         rg = new RG(valor, date)
         ddd = "12"
@@ -1247,7 +1275,7 @@ export default class DadosDeCliente extends Dados {
             }
         }
         servico = [
-            "Limpesa facial"
+            "Limpeza facial"
         ]
         sliceServico = servico.slice();
         for (let index = 0; index < sliceServico.length; index++) {
@@ -1267,11 +1295,12 @@ export default class DadosDeCliente extends Dados {
 
         nome = "Xuxa Menengues"
         nomeSocial = "Xu"
+        genero = "Feminino"
         valor = "290.290.290-29";
         date = new Date()
         date.getDate()
         cpf = new CPF(valor, date);
-        cliente = new Cliente(nome, nomeSocial, cpf)
+        cliente = new Cliente(nome, nomeSocial, genero, cpf)
         valor = "29.290.290-2"
         rg = new RG(valor, date)
         ddd = "12"
@@ -1313,11 +1342,12 @@ export default class DadosDeCliente extends Dados {
 
         nome = "Ultimo "
         nomeSocial = "Lest One"
+        genero = "Masculino"
         valor = "300.300.300-30";
         date = new Date()
         date.getDate()
         cpf = new CPF(valor, date);
-        cliente = new Cliente(nome, nomeSocial, cpf)
+        cliente = new Cliente(nome, nomeSocial, genero, cpf)
         valor = "30.300.300-3"
         rg = new RG(valor, date)
         ddd = "12"
@@ -1338,7 +1368,7 @@ export default class DadosDeCliente extends Dados {
         }
         servico = [
             "Tratamento anti-quedas dos fios",
-            "Remoção  de  rugas"
+            "Remoção de rugas"
         ]
         sliceServico = servico.slice();
         for (let index = 0; index < sliceServico.length; index++) {
